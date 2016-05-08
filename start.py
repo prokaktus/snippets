@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# Download and move snippets to the desired place
+# Not ready yet
 
 import click
 
