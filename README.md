@@ -1,6 +1,11 @@
-# snippets
-My snippets &amp; templates.
+Personal snippets
+=====
 
-```
-$ wget https://github.com/prokaktus/snippets/archive/master.zip
-```
+My snippets &amp; templates, that I use for use for my personal things.
+
+Includes:
+ - Cookiecutters templates
+ - Python code snippets
+ - JS code snippets
+ - Some other stuff
+
