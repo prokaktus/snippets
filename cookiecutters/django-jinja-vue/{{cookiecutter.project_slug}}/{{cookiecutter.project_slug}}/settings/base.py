@@ -29,9 +29,10 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 SECRET_KEY = getenv('SECRET_KEY', 'Not Secure Default s3cRE+t')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = getenv('DEBUG', False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = getenv('ALLOWED_HOSTS', 'localhost').split(',')
 
 
 # Application definition
