@@ -1,3 +1,5 @@
 {
-    "project_slug": "your_project"
+    "project_name": "Your Project",
+    "project_slug": "your_project",
+    "secret_key": "Big S3cRe+t"
 }
