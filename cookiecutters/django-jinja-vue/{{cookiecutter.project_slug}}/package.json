@@ -1,0 +1,31 @@
+{
+  "name": "{{cookiecutter.project_slug}}",
+  "version": "0.0.1",
+  "description": "",
+  "main": "package.json",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "{{cookiecutter.repo_url}}"
+  },
+  "author": "{{cookiecutter.author}}",
+  "license": "ISC",
+  "homepage": "{{cookiecutter.homepage}}",
+  "devDependencies": {
+    "@babel/core": "7.0.1",
+    "@babel/preset-env": "7.0.0",
+    "autoprefixer": "7.1.4",
+    "babel-loader": "8.0.2",
+    "css-loader": "0.28.7",
+    "mini-css-extract-plugin": "0.4.4",
+    "webpack": "4.23.1",
+    "webpack-cli": "3.1.2",
+    "postcss-loader": "2.0.6",
+    "precss": "2.0.0",
+    "style-loader": "0.18.2"
+  }
+}
