@@ -178,3 +178,54 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# Logging configuration
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(pathname)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        'echo': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        } if getenv('LOGGING_ENABLE_ECHO', False) else {'class': 'logging.NullHandler'},
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': '/var/log/{{cookiecutter.project_slug}}/django.log',
+            'formatter': 'verbose',
+            'when': 'D'
+        } if enable_file_logging else {'class': 'logging.NullHandler'}
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['echo', 'file'],
+            'level': getenv('LOGGING_LEVEL_DJANGO', 'INFO'),
+            'propagate': True,
+        },
+        'django.db': {
+            'handlers': ['echo', 'file'],
+            'level': getenv('LOGGING_LEVEL_DJANGO_DB', 'INFO'),
+            'propagate': False
+        },
+        'apps': {
+            'handlers': ['file', 'echo'],
+            'level': getenv('LOGGING_LEVEL_MAIN', 'INFO'),
+            'propagate': False
+        },
+        '{{cookiecutter.project_slug}}': {
+            'handlers': ['file', 'echo'],
+            'level': getenv('LOGGING_LEVEL_MAIN', 'INFO'),
+            'propagate': False
+        },
+    },
+}

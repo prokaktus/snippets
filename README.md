@@ -1,7 +1,7 @@
 Personal snippets
 =====
 
-My snippets &amp; templates, that I use for use for my personal things.
+My snippets &amp; templates, that I use for my personal things.
 
 Includes:
  - Cookiecutters templates
