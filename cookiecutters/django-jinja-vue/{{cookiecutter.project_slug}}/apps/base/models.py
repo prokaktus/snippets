@@ -1,3 +1,19 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-# Create your models here.
+
+class TimestampModel(models.Model):
+    class Meta:
+        abstract = True
+
+    updated_at = models.DateTimeField(
+        auto_now=True
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+
+class User(AbstractUser):
+    pass
